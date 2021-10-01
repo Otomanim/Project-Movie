@@ -29,7 +29,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jPy-zC-JWh">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Johnny-Depp-Wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="jPy-zC-JWh">
                         <rect key="frame" x="5" y="5" width="100" height="100"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="100" id="EGy-M8-6t0"/>
@@ -49,7 +49,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="movieImageView" destination="jPy-zC-JWh" id="1df-xd-nvQ"/>
+                <outlet property="movieLabel" destination="fve-SI-Rr0" id="EHa-md-AF2"/>
+            </connections>
             <point key="canvasLocation" x="28.985507246376812" y="91.741071428571431"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Johnny-Depp-Wallpaper" width="1920" height="1200"/>
+    </resources>
 </document>
