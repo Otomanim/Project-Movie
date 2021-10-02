@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     var movieNetwork = MovieNetwork()
     var checked = false
-    
+  
     
 //    MARK:- Outlet
     @IBOutlet weak var myTableView: UITableView!
@@ -38,6 +38,9 @@ class ViewController: UIViewController {
         self.myTableView.delegate = self
         self.myTableView.dataSource = self
         self.movieNetwork.getData()
+        self.movieNetwork.getMovie()
+//        self.vote_countLabel.text
+
         
         // Do any additional setup after loading the view.
     }
@@ -53,6 +56,9 @@ class ViewController: UIViewController {
         }
     }
     
+    func voteCount(voteCount: RatingModel){
+        self.vote_countLabel.text = (voteCount.vote_count) as? String
+    }
     
     
     
