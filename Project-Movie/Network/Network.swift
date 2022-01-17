@@ -41,7 +41,7 @@ class Network{
         AF.request(url).responseJSON { response in
             if let data = response.data {
                 do {
-                    let result: SimilarModel = try! JSONDecoder().decode(SimilarModel.self, from: data)
+                    let result: SimilarModel = try JSONDecoder().decode(SimilarModel.self, from: data)
                     self.arraySimilar = result.results
                     completion(true, nil)
                 } catch {
@@ -51,4 +51,6 @@ class Network{
             }
         }
     }
+    
+    
 }

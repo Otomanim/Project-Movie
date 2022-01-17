@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         }
         self.movieNetwork.getMovieSimilar { result, error in
             if result {
-                print(result)
+                self.myTableView.reloadData()
             } else {
                 print (error?.localizedDescription ?? "Error Similar Network")
             }
@@ -52,22 +52,31 @@ class ViewController: UIViewController {
             checked = true
         }
     }
+    
+    func getCount() -> Int{
+        return self.movieNetwork.arraySimilar.count
+    }
+    
+    func getCharacter(indexPath: IndexPath) -> Result{
+        return self.movieNetwork.arraySimilar[indexPath.row]
+    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        
+        return self.getCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: MovieTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as? MovieTableViewCell
+        cell?.setup(value: getCharacter(indexPath: indexPath))
         
         return cell ?? UITableViewCell()
     }
-    
-
 }
+
 extension UIView{
    
    func addBlackGradientLayerInForeground(frame: CGRect, colors:[UIColor]){
