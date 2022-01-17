@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MovieTableViewCell" customModule="Project_Movie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8M-Hg-Bs3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fve-SI-Rr0">
+                                <rect key="frame" x="119" y="29" width="227" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <color key="textColor" red="0.94109410049999997" green="0.94122928380000004" blue="0.9410645366" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Johnny-Depp-Wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="jPy-zC-JWh">
+                        <rect key="frame" x="5" y="5" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="EGy-M8-6t0"/>
+                            <constraint firstAttribute="width" constant="100" id="mMD-AZ-4Uy"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="jPy-zC-JWh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Kd6-xa-nrN"/>
+                    <constraint firstAttribute="bottom" secondItem="jPy-zC-JWh" secondAttribute="bottom" constant="5" id="UOc-Up-Miz"/>
+                    <constraint firstItem="u8M-Hg-Bs3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ZBy-Ba-R3J"/>
+                    <constraint firstAttribute="trailing" secondItem="u8M-Hg-Bs3" secondAttribute="trailing" id="dod-k1-enL"/>
+                    <constraint firstItem="jPy-zC-JWh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="k3B-Jt-JCY"/>
+                    <constraint firstAttribute="bottom" secondItem="u8M-Hg-Bs3" secondAttribute="bottom" id="s1B-59-8Tt"/>
+                    <constraint firstItem="u8M-Hg-Bs3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="xIA-Og-RXt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="movieImageView" destination="jPy-zC-JWh" id="1df-xd-nvQ"/>
+                <outlet property="movieLabel" destination="fve-SI-Rr0" id="EHa-md-AF2"/>
+            </connections>
+            <point key="canvasLocation" x="28.985507246376812" y="91.741071428571431"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Johnny-Depp-Wallpaper" width="1920" height="1200"/>
+    </resources>
+</document>
