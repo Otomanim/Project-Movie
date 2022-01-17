@@ -26,7 +26,14 @@ class ViewController: UIViewController {
                 self.popularityLabel.text = String(movieNetwork.popularity)
                 self.vote_countLabel.text = String(movieNetwork.vote_count) + " " + "Likes"
             } else {
-                print (error?.localizedDescription ?? "Error Network")
+                print (error?.localizedDescription ?? "Error Movie Network")
+            }
+        }
+        self.movieNetwork.getMovieSimilar { result, error in
+            if result {
+                print(result)
+            } else {
+                print (error?.localizedDescription ?? "Error Similar Network")
             }
         }
               

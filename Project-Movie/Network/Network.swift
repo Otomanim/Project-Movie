@@ -12,11 +12,12 @@ class Network{
     
     var popularity: Double = 0
     var vote_count: Int = 0
-    var movieSimilar [] = []
+    var arraySimilar: [Result] = []
+    
     func getMovie(completion: @escaping (Bool, Error?) -> Void ){
         
-        var api_key = "d088d687d6302295202f2cf641a161f4"
-        var url: String = "https://api.themoviedb.org/3/movie/123?api_key=\(api_key)"
+        let api_key: String = "d088d687d6302295202f2cf641a161f4"
+        let url: String = "https://api.themoviedb.org/3/movie/123?api_key=\(api_key)"
         
         AF.request(url).responseJSON { response in
             if let data = response.data {
@@ -34,5 +35,20 @@ class Network{
     
     func getMovieSimilar(completion: @escaping (Bool, Error?) -> Void ){
         
+        let api_key: String = "d088d687d6302295202f2cf641a161f4"
+        let url: String = "https://api.themoviedb.org/3/movie/111/similar?api_key=\(api_key)&language=en-US&page=1"
+        
+        AF.request(url).responseJSON { response in
+            if let data = response.data {
+                do {
+                    let result: SimilarModel = try! JSONDecoder().decode(SimilarModel.self, from: data)
+                    self.arraySimilar = result.results
+                    completion(true, nil)
+                } catch {
+                    completion(false, error)
+                    print(error)
+                }
+            }
+        }
     }
 }
